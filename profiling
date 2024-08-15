@@ -1,0 +1,20 @@
+pandas profiling file 
+
+import pandas as pd
+from pandas_profiling import ProfileReport
+
+# Example DataFrame
+df = pd.DataFrame({
+    'A': [1, 2, 3, 4, 5],
+    'B': [5, 6, 7, 8, 9],
+    'C': ['a', 'b', 'a', 'b', 'a']
+})
+
+# Generate a report
+profile = ProfileReport(df, title="DataFrame Report", explorative=True)
+
+# Save report to an HTML file
+profile.to_file("report.html")
+
+# If you want to view it inline in a Jupyter notebook, use:
+# profile.to_notebook_iframe()
